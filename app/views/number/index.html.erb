@@ -1,0 +1,13 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<div class="block">
+  <div class="div-table">
+<% if user_signed_in? %>
+        <div class="div-table-legend">Здравствуйте, <%= current_user.email %></div>
+    <div class="div-table-row"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></div>
+<% else %>
+    <div class="div-table-row"><%= link_to 'Войти', new_user_session_path %>
+      или <%= link_to 'Зарегистрироваться', new_user_registration_path %></div>
+<% end %>
+  </div>
+</div>
